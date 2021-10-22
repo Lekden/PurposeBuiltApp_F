@@ -47,6 +47,7 @@ const OrgDashboard = ({ navigation }) => {
     return (
       <View key={item["_id"]} style={styles.cardView}>
         <Text style={styles.title}>Title:{item.title}</Text>
+        <Text style={styles.title}>Company Name:{UserState.name}</Text>
         <Text style={styles.description}>Description:{item.description}</Text>
         <Text style={styles.date}>Start Date:{item.startDate}</Text>
         <Text style={styles.date}>End Date :{item.endDate}</Text>

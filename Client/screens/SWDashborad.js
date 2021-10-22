@@ -7,6 +7,7 @@ import {
   ScrollView,
   StyleSheet,
   Dimensions,
+  TouchableOpacity,
 } from "react-native";
 const { width, height } = Dimensions.get("window");
 
@@ -51,8 +52,7 @@ const SWDashboard = ({ navigation }) => {
   const jobsList = jobs.map((item) => {
     return (
       <View key={item["_id"]} style={styles.cardView}>
-        <Text style={styles.title}>Title:{item.title}</Text>
-        <Text
+        <TouchableOpacity
           onPress={() => {
             navigation.navigate("JobConfirmation", {
               jobId: item["_id"],
@@ -62,12 +62,16 @@ const SWDashboard = ({ navigation }) => {
               email: UserState.email,
             });
           }}
-          style={styles.description}
         >
-          Description:{item.description}
-        </Text>
-        <Text style={styles.date}>Start Date:{item.startDate}</Text>
-        <Text style={styles.date}>End Date :{item.endDate}</Text>
+          <Text style={styles.title}>Title:{item.title}</Text>
+          <Text style={styles.title}>Company Name:{UserState.name}</Text>
+          <Text style={styles.description}>
+            {" "}
+            Description:{item.description}
+          </Text>
+          <Text style={styles.date}>Start Date:{item.startDate}</Text>
+          <Text style={styles.date}>End Date :{item.endDate}</Text>
+        </TouchableOpacity>
       </View>
     );
   });

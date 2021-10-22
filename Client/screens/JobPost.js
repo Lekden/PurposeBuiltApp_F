@@ -46,6 +46,10 @@ const JobPost = ({ navigation }) => {
   //actual date of birth to be entered
   const [endDate, setEndDate] = useState();
 
+  // const formatedDate = `${
+  //   date.getMonth() + 1
+  // }/${date.getDate()}/${date.getFullYear()}`;
+
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
     setShow(false);
